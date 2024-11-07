@@ -1,5 +1,8 @@
 package com.erickprojetos.superhero_manager.superhero;
 
+import java.util.UUID;
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,11 +20,11 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "superhero")
-public class Superhero {
+public class SuperHero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private UUID id;
 
     @Column(nullable = false)
     private String name;

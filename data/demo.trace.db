@@ -1,0 +1,3 @@
+2024-11-07 13:00:06.379642-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "DESCRIPTION CHARACTER VARYING(255)": "U&'Ex-militar e mercen\\00e1rio, Wade Wilson (Ryan Reynolds) \\00e9 diagnosticado ... (310)"; SQL statement:
+insert into superhero (description,image_url,is_human,name,superpower,weakness,id) values (?,?,?,?,?,?,?) [22001-224]
