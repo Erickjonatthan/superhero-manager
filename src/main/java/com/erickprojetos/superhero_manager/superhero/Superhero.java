@@ -49,4 +49,13 @@ public class SuperHero {
     private Boolean isHuman;
 
     private String imageUrl;
+
+    public void update(SuperHero superHero) {
+        this.name = superHero.getName();
+        this.superpowers = superHero.getSuperpowers();
+        this.weakness = superHero.getWeakness();
+        this.description = superHero.getDescription();
+        this.isHuman = superHero.getIsHuman();
+        this.imageUrl = superHero.getImageUrl();
+    }
 }

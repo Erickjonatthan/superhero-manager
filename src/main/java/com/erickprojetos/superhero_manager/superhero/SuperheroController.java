@@ -63,14 +63,10 @@ public class SuperHeroController {
     public ResponseEntity<SuperHero> updateSuperHero(@PathVariable UUID id, @RequestBody SuperHero payload) {
         Optional<SuperHero> superHero = this.superHeroRepository.findById(id);
         if (superHero.isPresent()) {
+            
             SuperHero superHeroToUpdate = superHero.get();
 
-            superHeroToUpdate.setName(payload.getName());
-            superHeroToUpdate.setSuperpowers(payload.getSuperpowers());
-            superHeroToUpdate.setWeakness(payload.getWeakness());
-            superHeroToUpdate.setDescription(payload.getDescription());
-            superHeroToUpdate.setIsHuman(payload.getIsHuman());
-            superHeroToUpdate.setImageUrl(payload.getImageUrl());
+            superHeroToUpdate.update(payload);
 
             this.superHeroRepository.save(superHeroToUpdate);
 
