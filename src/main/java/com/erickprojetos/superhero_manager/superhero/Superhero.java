@@ -11,6 +11,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,17 +31,21 @@ public class SuperHero {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(nullable = false)
+    @NotBlank
+    @Column(unique = true)
     private String name;
 
     @ElementCollection(fetch = FetchType.EAGER)
+    @NotEmpty
     private List<String> superpowers;
 
     private String weakness;
 
+    @NotBlank
     private String description;
 
-    @Column(name = "is_human", nullable = false)
+    @Column(name = "is_human")
+    @NotNull
     private Boolean isHuman;
 
     private String imageUrl;
